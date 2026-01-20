@@ -1,18 +1,49 @@
-## Setup
+# InvoiceAppOCR
 
-1. Create virtual environment
-   python -m venv venv
-   source venv/bin/activate  (Windows: venv\Scripts\activate)
+InvoiceAppOCR is a Flask application for parsing India Specific PDF invoices,
+extracting structured data using OCR and checking compliance using GenAI to 
+storing results in a PostgreSQL database for downstream applications.
 
-2. Install dependencies
-   pip install -r requirements.txt
+## Installation
 
-3. Create .env file
-   POSTGRES_DB_URI=postgresql://<username>:<password>@<host>:<port>/<db>
-   GOOGLE_API_KEY=your_api_key
+Install dependencies using pip:
 
-4. Run application
-   python app.py
+``` bash
+pip install -r requirements.txt
+```
 
-5. Open browser
-   http://127.0.0.1:5000/
+## Configuration
+
+Create a `.env` file in the project root:
+
+``` env
+POSTGRES_DB_URI=postgresql://<username>:<password>@<rds_endpoint>:<port>/<database_name>
+GOOGLE_API_KEY=your_google_api_key
+```
+
+## Usage
+
+Create the uploads folder if it does not exist:
+
+``` bash
+mkdir uploads
+```
+
+Run the application:
+
+``` bash
+python app.py
+```
+
+Open in your browser:
+
+    http://127.0.0.1:5000/
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss changes.
+
+## License
+
+MIT
