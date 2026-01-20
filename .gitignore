@@ -7,7 +7,7 @@ __pycache__/
 # Environment variables
 .env
 .venv/
-.Invoices/
+Invoices/
 
 #Uploads Folder (Created during Runtime)
 uploads/
