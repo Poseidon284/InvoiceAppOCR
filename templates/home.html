@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Invoice Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <h1 class="page-title">Invoice Processing Dashboard</h1>
+
+    <div class="card-grid">
+
+        <!-- Upload Card -->
+        <a href="{{ url_for('upload') }}" class="card">
+            <i class="fa-solid fa-upload card-icon"></i>
+            <h3>Upload Invoices</h3>
+            <p>Upload and process PDF invoices</p>
+        </a>
+
+        <!-- Records Card -->
+        <a href="{{ url_for('records') }}" class="card">
+            <i class="fa-solid fa-database card-icon"></i>
+            <h3>View Records</h3>
+            <p>Browse processed invoices</p>
+        </a>
+
+        <!-- Records Card -->
+        <a href="{{ url_for('duplicates') }}" class="card">
+            <i class="fa-solid fa-database card-icon"></i>
+            <h3>View Duplicates</h3>
+            <p>Browse Duplicate Invoices</p>
+        </a>
+
+    </div>
+
+</div>
+{% endblock %}

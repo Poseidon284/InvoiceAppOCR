@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Invoice Upload</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <h1>Invoice Processor</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
+        <input type="file" name="files" multiple accept=".pdf" required>
+
+        <div class="button-row">
+            <button type="submit">Upload & Process</button>
+
+            <!-- Back Button -->
+            <a href="{{ url_for('home') }}" class="secondary-btn">
+                Back to Home
+            </a>
+        </div>
+    </form>
+
+</div>
+{% endblock %}

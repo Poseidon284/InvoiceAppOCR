@@ -1,0 +1,192 @@
+THE CHENNAI MOBILES
+CM-18 (Hope College(2))1640-1644,Avinashi Road,
+Hope College,Peelamedu,,COIMBATORE- 641005 Ph: 9159700099/9944412345
+GSTIN :33AAFFC1582L1ZG State :33-TAMIL NADU, PAN #: AAFFC1582L
+
+TAX INVOICE
+Original Copy
+
+Invoice No : SI/CM-18/5966
+Invoice Date : 20/09/2022
+Invoice Time : 14:57:00
+Saleperson : TCMP11870 - VIGNESH
+
+Billing Address,
+Mr. RADHESH RATHNAM
+COIMBATORE-
+Ph: 9585711131
+GSTIN : -NA- Place of Supply :33-TAMIL NADU
+
+Shipping Address,
+RADHESH RATHNAM
+COIMBATORE-
+Ph: 9585711131
+GSTIN : -NA- State :33-TAMIL NADU
+
+SNo Code Particulars HSN/SAC Qty Rate Brand Scheme SCHEME 2 Amount
+1 131619 ELITE 2 - JABRA - TWS - NAVY BLUE , IMEI NO: 00064992470 85176290 1 3,381.36 0 0 3,381.36
+Total 0 0 3,381.36
+CGST 9% on 3,381.36 0 0 304.32
+SGST 9% on 3,381.36 0 0 304.32
+Sub Total 0 0 3,990.00
+Net Total 1 0 0 3,990.00
+
+Amount in Words : Three Thousand Nine Hundred and Ninety Rupees
+SERVICE CENTER :
+
+Payment Info : e-Wallet Rs.3,990.00,
+
+WARRANTY TERMS CONDITIONS
+1) The warranty for the purchased product from us starts from the date of invoice as per the Company manufactures warranty
+terms conditions.
+2) During the period of warranty if there is any service issue the customer shall directly approach the respective
+authorized service center.
+3) If customer services the mobile in a non-authorized service center during the warranty period.then the warranty of the
+mobile will be cancelled as per manufactures warranty terms.
+4) Under warranty period any complaint like(Mic,Ringer,Receiver,Software Complaint,Mobile Heating Up)will be only serviced
+by the respective mobile manufactures authorized service center as per the manufactures Norms.
+5) Warranty will not be applicable for the following cases:Physical damage,Liquid damage.Water logged any Hardware damage
+due to over charging or high voltage for both mobile Accessories.
+6) For the accessories like Battery,Head Phone,data cable Charger which comes along the original kit has only 6 months
+warranty as per the manufactures Norms.
+7) Battery will not be covered under warranty if it is bulged.
+8) If any warranty gets rejected by the manufacturer or their authorized service center.The Chennai Mobiles will not be held
+responsible for the same.
+9) There is no replacement of mobile guarantee from The Chennai Mobiles unless it is approved by the manufacturers
+authorized service center.All defects after sales will only be serviced as per manufacturers service policy norms.
+10) If service center approves replacement.then customer as to submit following items:Mobile with full kit including box and
+IMEI Sticker in it.Without above set condition replacement will not be possible.
+
+for THE CHENNAI MOBILES
+
+Receivers Signature Authorized Seal & Signature
+{
+  "raw_extracted_json": {
+    "vendor_details": {
+      "name": "THE CHENNAI MOBILES",
+      "address": "CM-18 (Hope College(2))1640-1644,Avinashi Road, Hope College,Peelamedu,,COIMBATORE- 641005",
+      "phone": "9159700099/9944412345",
+      "gstin": "33AAFFC1582L1ZG",
+      "pan": "AAFFC1582L",
+      "state": "33-TAMIL NADU"
+    },
+    "invoice_details": {
+      "invoice_no": "SI/CM-18/5966",
+      "date": "20/09/2022",
+      "time": "14:57:00",
+      "saleperson": "TCMP11870 - VIGNESH"
+    },
+    "customer_details": {
+      "billing_name": "Mr. RADHESH RATHNAM",
+      "billing_address": "COIMBATORE-",
+      "billing_phone": "9585711131",
+      "place_of_supply": "33-TAMIL NADU",
+      "shipping_name": "RADHESH RATHNAM",
+      "shipping_address": "COIMBATORE-"
+    },
+    "line_items": [
+      {
+        "sno": 1,
+        "code": "131619",
+        "particulars": "ELITE 2 - JABRA - TWS - NAVY BLUE , IMEI NO: 00064992470",
+        "hsn_sac": "85176290",
+        "qty": 1,
+        "rate": 3381.36,
+        "amount": 3381.36
+      }
+    ],
+    "tax_summary": {
+      "cgst_rate": "9%",
+      "cgst_amount": 304.32,
+      "sgst_rate": "9%",
+      "sgst_amount": 304.32,
+      "taxable_value": 3381.36
+    },
+    "totals": {
+      "sub_total": 3990.00,
+      "net_total": 3990.00,
+      "amount_in_words": "Three Thousand Nine Hundred and Ninety Rupees"
+    },
+    "payment_info": {
+      "method": "e-Wallet",
+      "amount": 3990.00
+    }
+  },
+  "vendor": {
+    "vendor_name": "THE CHENNAI MOBILES",
+    "vendor_gstin": "33AAFFC1582L1ZG",
+    "vendor_pan": "AAFFC1582L"
+  },
+  "invoice": {
+    "invoice_number": "SI/CM-18/5966",
+    "invoice_date": "2022-09-20",
+    "invoice_period": {
+      "start": null,
+      "end": null
+    },
+    "currency": "INR",
+    "payment_due_date": null,
+    "payment_terms_days": null
+  },
+  "items": [
+    {
+      "description": "ELITE 2 - JABRA - TWS - NAVY BLUE , IMEI NO: 00064992470",
+      "hsn_sac": "85176290",
+      "quantity": 1.0,
+      "unit_price": 3381.36,
+      "tax_rate": 18.0,
+      "taxable_value": 3381.36,
+      "cgst": 304.32,
+      "sgst": 304.32,
+      "igst": 0.0,
+      "total_value": 3990.0
+    }
+  ],
+  "amounts": {
+    "taxable_amount": 3381.36,
+    "cgst_amount": 304.32,
+    "sgst_amount": 304.32,
+    "igst_amount": 0.0,
+    "total_tax_amount": 608.64,
+    "invoice_total_amount": 3990.0,
+    "tax_applicable": true
+  },
+  "classification": {
+    "expense_type": "OpEx",
+    "ledger_category": "Expenses"
+  },
+  "rule_trace": [
+    {
+      "rule_name": "GST CALCULATION MATCH",
+      "status": "PASS",
+      "message": "Taxable amount (3381.36) + Total tax (608.64) equals Invoice total (3990.00)."
+    },
+    {
+      "rule_name": "GST / PAN PRESENCE",
+      "status": "PASS",
+      "message": "Vendor GSTIN and PAN are present."
+    },
+    {
+      "rule_name": "DATE VALIDITY",
+      "status": "WARNING",
+      "message": "Invoice date (2022-09-20) is older than 18 months."
+    },
+    {
+      "rule_name": "DUPLICATE INVOICE HEURISTIC",
+      "status": "PASS",
+      "message": "No duplicate indicators found."
+    },
+    {
+      "rule_name": "TAX STRUCTURE CONSISTENCY",
+      "status": "PASS",
+      "message": "Intra-state tax structure (CGST/SGST) is consistent."
+    },
+    {
+      "rule_name": "PAYMENT TERMS CONSISTENCY",
+      "status": "NOT_APPLICABLE",
+      "message": "No payment terms or due date provided."
+    }
+  ],
+  "confidence_score": 98,
+  "doc_score": "ACCEPTABLE"
+}

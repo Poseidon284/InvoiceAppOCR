@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block head %}
+<title>Invoice Records</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+
+    <div class="header-row">
+        <h1 class="page-title">Processed Invoices</h1>
+
+        <!-- Back Button -->
+        <a href="{{ url_for('home') }}" class="secondary-btn">
+            Back to Home
+        </a>
+    </div>
+
+    {% if records %}
+    <div class="table-wrapper">
+        <table class="records-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>File</th>
+                    <th>Doc Score</th>
+                    <th>Confidence</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+            {% for r in records %}
+                <!-- Summary Row -->
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ r.source_file_name }}</td>
+                    <td>{{ r.doc_score }}</td>
+                    <td>{{ "%.2f"|format(r.confidence_score or 0) }}</td>
+                    <td class="action-buttons">
+                        <button onclick="toggleDetails('{{ loop.index }}')">
+                            Details
+                        </button>
+                        <a href="{{ url_for('uploaded_file', filename=r.source_file_name) }}"
+                            target="_blank"
+                            class="secondary-btn small-btn">
+                            View Invoice
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- Expanded Row -->
+                <tr id="details-{{ loop.index }}" style="display:none;">
+                    <td colspan="5">
+
+                        <div class="details-grid">
+
+                            <div class="detail-block">
+                                <h4>Vendor</h4>
+                                <pre>{{ r.vendor | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Invoice</h4>
+                                <pre>{{ r.invoice | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Items</h4>
+                                <pre>{{ r.items | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Amounts</h4>
+                                <pre>{{ r.amounts | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Classification</h4>
+                                <pre>{{ r.classification | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Rule Trace</h4>
+                                <pre>{{ r.rule_trace | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Raw Extracted JSON</h4>
+                                <pre>{{ r.raw_extracted_json | tojson(indent=2) }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>Raw OCR Text</h4>
+                                <pre class="raw-text">{{ r.raw_text }}</pre>
+                            </div>
+
+                            <div class="detail-block">
+                                <h4>File Hash</h4>
+                                <pre>{{ r.source_file_hash }}</pre>
+                            </div>
+
+                        </div>
+
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+        <p>No records found.</p>
+    {% endif %}
+
+</div>
+
+<script>
+function toggleDetails(id) {
+    const row = document.getElementById("details-" + id);
+    row.style.display = row.style.display === "none" ? "table-row" : "none";
+}
+</script>
+
+{% endblock %}
