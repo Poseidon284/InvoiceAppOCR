@@ -2,8 +2,9 @@ from flask import request, redirect, url_for
 from flask_restful import Resource
 from werkzeug.utils import secure_filename
 import os
-
+from cache import cache
 from models import db, UploadedFile, UPLOAD_FOLDER
+from app import cache
 from utils import genai_utils
 
 
@@ -39,5 +40,6 @@ class UploadPDFAPI(Resource):
         for rec in saved:
             inv_rec = genai_utils.ocr(rec)
             inv_records.append(inv_rec)
+        cache.clear()
 
         return redirect(url_for("upload",  msg="Upload completed successfully"))

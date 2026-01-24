@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from flask_restful import Api
 from sqlalchemy import func
-
+from cache import cache
 from models import db, UPLOAD_FOLDER, Invoice
 from apis.upload import UploadPDFAPI
 
@@ -16,6 +16,7 @@ app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
 api = Api(app)
 db.init_app(app)
+cache.init_app(app)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -33,11 +34,13 @@ def uploaded_file(filename):
 api.add_resource(UploadPDFAPI, "/upload")
 
 @app.route("/records", methods=["GET"])
+@cache.cached(timeout=3600)
 def records():
     invoices = Invoice.query.order_by(Invoice.invoice_id.desc()).all()
     return render_template("records.html", records=invoices)
 
 @app.route("/duplicates", methods=["GET"])
+@cache.cached(timeout=3600)
 def duplicates():
     dup_hashes = (Invoice.query.with_entities(Invoice.source_file_hash)
                   .group_by(Invoice.source_file_hash)
