@@ -41,7 +41,7 @@
                         <button onclick="toggleDetails('{{ loop.index }}')">
                             Details
                         </button>
-                        <a href="{{ url_for('uploaded_file', filename=r.source_file_name) }}"
+                        <a href="/upload/{{ r.source_file_name }}"
                             target="_blank"
                             class="secondary-btn small-btn">
                             View Invoice

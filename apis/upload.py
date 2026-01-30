@@ -1,4 +1,4 @@
-from flask import request, redirect, url_for
+from flask import request, redirect, url_for,  make_response, render_template, send_from_directory
 from flask_restful import Resource
 from werkzeug.utils import secure_filename
 import os
@@ -9,6 +9,13 @@ from utils import genai_utils
 
 
 class UploadPDFAPI(Resource):
+    def get(self, filename=None):
+        if filename is None:
+            headers = {'Content-Type': 'text/html'}
+            return make_response(render_template('upload.html'),200,headers)
+        headers = {'Content-Type': 'application/pdf'}
+        return make_response(send_from_directory(UPLOAD_FOLDER, filename), 200,  headers)
+    
     def post(self):
         files = request.files.getlist("files")
         if not files:
@@ -42,4 +49,4 @@ class UploadPDFAPI(Resource):
             inv_records.append(inv_rec)
         cache.clear()
 
-        return redirect(url_for("upload",  msg="Upload completed successfully"))
+        return redirect(url_for('upload', msg='Upload completed successfully'))

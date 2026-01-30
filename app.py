@@ -1,4 +1,4 @@
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template
 import os
 from dotenv import load_dotenv
 from flask_restful import Api
@@ -22,16 +22,7 @@ cache.init_app(app)
 def home():
     return render_template("home.html")
 
-
-@app.route("/upload", methods=["GET"])
-def upload():
-    return render_template("upload.html")
-
-@app.route("/upload/<path:filename>")
-def uploaded_file(filename):
-    return send_from_directory(UPLOAD_FOLDER, filename)
-
-api.add_resource(UploadPDFAPI, "/upload")
+api.add_resource(UploadPDFAPI, "/upload", "/upload/<path:filename>", endpoint='upload')
 
 @app.route("/records", methods=["GET"])
 @cache.cached(timeout=3600)
