@@ -27,18 +27,21 @@ api.add_resource(UploadPDFAPI, "/upload", "/upload/<path:filename>", endpoint='u
 @app.route("/records", methods=["GET"])
 @cache.cached(timeout=3600)
 def records():
-    invoices = Invoice.query.order_by(Invoice.invoice_id.desc()).all()
+    invoices = (db.session.scalars(db.select(Invoice).order_by(Invoice.invoice_id.desc())).all())
     return render_template("records.html", records=invoices)
 
 @app.route("/duplicates", methods=["GET"])
 @cache.cached(timeout=3600)
 def duplicates():
-    dup_hashes = (Invoice.query.with_entities(Invoice.source_file_hash)
-                  .group_by(Invoice.source_file_hash)
-                  .having(func.count() > 1)
-                  .subquery()
-                )
-    dup_invoices = Invoice.query.filter(Invoice.source_file_hash.in_(dup_hashes)).all()
+    dup_hashes = (
+        db.select(Invoice.source_file_hash).group_by(Invoice.source_file_hash).having(func.count() > 1).subquery()
+    )
+
+    dup_invoices = (
+        db.session.scalars(
+            db.select(Invoice).where(Invoice.source_file_hash.in_(db.select(dup_hashes.c.source_file_hash)))
+        ).all()
+    )
     return render_template("duplicates.html", duplicates=dup_invoices)
 
 
