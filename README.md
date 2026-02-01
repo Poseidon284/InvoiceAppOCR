@@ -23,12 +23,6 @@ GOOGLE_API_KEY=your_google_api_key
 
 ## Usage
 
-Create the uploads folder if it does not exist:
-
-``` bash
-mkdir uploads
-```
-
 Run the application:
 
 ``` bash
